@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Opportunity Recommendation System</title>
+    <style>
+        /* Copyright Bhanu Satish Puvvala 2025 */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e0f7fa;
+            background-image: linear-gradient(135deg, #e0f7fa, #80deea);
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        input, select, button {
+            margin-top: 5px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .results {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>S.I.J Recommendation System</h1>
+        <form id="recommendationForm">
+            <label for="education">Education Qualification</label>
+            <select id="education" name="education">
+                <option value="Undergraduate">Undergraduate</option>
+                <option value="Graduate">Graduate</option>
+                <option value="School">School</option>
+            </select>
+
+            <label for="gender">Gender</label>
+            <select id="gender" name="gender">
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select>
+
+            <label for="community">Community</label>
+            <select id="community" name="community">
+                <option value="General">General</option>
+                <option value="SC">SC</option>
+                <option value="ST">ST</option>
+                <option value="OBC">OBC</option>
+            </select>
+
+            <label for="income">Annual Income</label>
+            <select id="income" name="income">
+                <option value="Upto 1.5L">Upto 1.5L</option>
+                <option value="1.5L - 3L">1.5L - 3L</option>
+                <option value="Above 3L">Above 3L</option>
+            </select>
+
+            <button type="button" onclick="getRecommendations()">Get Recommendations</button>
+        </form>
+        <div class="results" id="results">
+            <!-- Results will appear here -->
+        </div>
+    </div>
+
+    <script>
+        function getRecommendations() {
+            const education = document.getElementById('education').value;
+            const gender = document.getElementById('gender').value;
+            const community = document.getElementById('community').value;
+            const income = document.getElementById('income').value;
+
+            // Placeholder for connecting with backend logic
+            const recommendations = [
+                "Scholarship A for Undergraduate students",
+                "Internship B for OBC candidates",
+                "Job Opportunity C for low-income families"
+            ];
+
+            const resultsDiv = document.getElementById('results');
+            resultsDiv.innerHTML = `<h2>Recommended Opportunities:</h2>`;
+            resultsDiv.innerHTML += recommendations.map(r => `<p>${r}</p>`).join('');
+        }
+    </script>
+
+    <footer style="text-align: center; margin-top: 20px; font-size: 14px; color: #666;">
+        &copy; Bhanu Satish Puvvala 2025
+    </footer>
+</body>
+</html>
